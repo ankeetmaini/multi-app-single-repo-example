@@ -2,18 +2,20 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import AwesomeCounter from './apps/awesome-counter/index';
-import Real1 from './apps/real-1';
-import Real2 from './apps/real-2';
-import Real3 from './apps/real-3';
-import Real4 from './apps/real-4';
-import Real5 from './apps/real-5';
-import Real6 from './apps/real-6';
-import Real7 from './apps/real-7';
-import Real8 from './apps/real-8';
-import Real9 from './apps/real-9';
-import Real10 from './apps/real-10';
-import Real11 from './apps/real-11';
+const Suspense = React.Suspense;
+
+const AwesomeCounter = React.lazy(() => import('./apps/awesome-counter/index'));
+const Real1 = React.lazy(() => import('./apps/real-1'));
+const Real2 = React.lazy(() => import('./apps/real-2'));
+const Real3 = React.lazy(() => import('./apps/real-3'));
+const Real4 = React.lazy(() => import('./apps/real-4'));
+const Real5 = React.lazy(() => import('./apps/real-5'));
+const Real6 = React.lazy(() => import('./apps/real-6'));
+const Real7 = React.lazy(() => import('./apps/real-7'));
+const Real8 = React.lazy(() => import('./apps/real-8'));
+const Real9 = React.lazy(() => import('./apps/real-9'));
+const Real10 = React.lazy(() => import('./apps/real-10'));
+const Real11 = React.lazy(() => import('./apps/real-11'));
 
 const App = () => (
   <Switch>
@@ -21,7 +23,9 @@ const App = () => (
       path="/awesome-counter"
       render={(props) => (
         <div>
-          <AwesomeCounter {...props} />
+          <Suspense fallback={<div>Loading...</div>}>
+            <AwesomeCounter {...props} />
+          </Suspense>
         </div>
       )}
     />
@@ -29,8 +33,10 @@ const App = () => (
       path="/real-1"
       render={(props) => (
         <div>
-          <h1>Real 1 </h1>
-          <Real1 {...props} />
+          <Suspense fallback={<div>Loading...</div>}>
+            <h1>Real 1 </h1>
+            <Real1 {...props} />
+          </Suspense>
         </div>
       )}
     />
@@ -38,8 +44,10 @@ const App = () => (
       path="/real-2"
       render={(props) => (
         <div>
-          <h1>Real 2 </h1>
-          <Real2 {...props} />
+          <Suspense fallback={<div>Loading...</div>}>
+            <h1>Real 2 </h1>
+            <Real2 {...props} />
+          </Suspense>
         </div>
       )}
     />
@@ -47,8 +55,10 @@ const App = () => (
       path="/real-3"
       render={(props) => (
         <div>
-          <h1>Real 3 </h1>
-          <Real3 {...props} />
+          <Suspense fallback={<div>Loading...</div>}>
+            <h1>Real 3 </h1>
+            <Real3 {...props} />
+          </Suspense>
         </div>
       )}
     />
@@ -56,8 +66,10 @@ const App = () => (
       path="/real-4"
       render={(props) => (
         <div>
-          <h1>Real 4 </h1>
-          <Real4 {...props} />
+          <Suspense fallback={<div>Loading...</div>}>
+            <h1>Real 4 </h1>
+            <Real4 {...props} />
+          </Suspense>
         </div>
       )}
     />
@@ -65,8 +77,10 @@ const App = () => (
       path="/real-5"
       render={(props) => (
         <div>
-          <h1>Real 5 </h1>
-          <Real5 {...props} />
+          <Suspense fallback={<div>Loading...</div>}>
+            <h1>Real 5 </h1>
+            <Real5 {...props} />
+          </Suspense>
         </div>
       )}
     />
@@ -74,8 +88,10 @@ const App = () => (
       path="/real-6"
       render={(props) => (
         <div>
-          <h1>Real 6 </h1>
-          <Real6 {...props} />
+          <Suspense fallback={<div>Loading...</div>}>
+            <h1>Real 6 </h1>
+            <Real6 {...props} />
+          </Suspense>
         </div>
       )}
     />
@@ -83,8 +99,10 @@ const App = () => (
       path="/real-7"
       render={(props) => (
         <div>
-          <h1>Real 7 </h1>
-          <Real7 {...props} />
+          <Suspense fallback={<div>Loading...</div>}>
+            <h1>Real 7 </h1>
+            <Real7 {...props} />
+          </Suspense>
         </div>
       )}
     />
@@ -92,8 +110,10 @@ const App = () => (
       path="/real-8"
       render={(props) => (
         <div>
-          <h1>Real 8 </h1>
-          <Real8 {...props} />
+          <Suspense fallback={<div>Loading...</div>}>
+            <h1>Real 8 </h1>
+            <Real8 {...props} />
+          </Suspense>
         </div>
       )}
     />
@@ -101,8 +121,10 @@ const App = () => (
       path="/real-9"
       render={(props) => (
         <div>
-          <h1>Real 9 </h1>
-          <Real9 {...props} />
+          <Suspense fallback={<div>Loading...</div>}>
+            <h1>Real 9 </h1>
+            <Real9 {...props} />
+          </Suspense>
         </div>
       )}
     />
@@ -110,8 +132,10 @@ const App = () => (
       path="/real-10"
       render={(props) => (
         <div>
-          <h1>Real 10 </h1>
-          <Real10 {...props} />
+          <Suspense fallback={<div>Loading...</div>}>
+            <h1>Real 10 </h1>
+            <Real10 {...props} />
+          </Suspense>
         </div>
       )}
     />
@@ -119,8 +143,10 @@ const App = () => (
       path="/real-11"
       render={(props) => (
         <div>
-          <h1>Real 11 </h1>
-          <Real11 {...props} />
+          <Suspense fallback={<div>Loading...</div>}>
+            <h1>Real 11 </h1>
+            <Real11 {...props} />
+          </Suspense>
         </div>
       )}
     />

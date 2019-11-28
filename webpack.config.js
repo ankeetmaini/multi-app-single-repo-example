@@ -14,9 +14,7 @@ var CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
   context: sourcePath,
-  entry: {
-    app: './app.js'
-  },
+  entry: './app.js',
   output: {
     path: outPath,
     filename: isProduction ? '[contenthash].js' : '[hash].js',
@@ -38,7 +36,7 @@ module.exports = {
         use: [
           !isProduction && {
             loader: 'babel-loader',
-            options: { plugins: ['react-hot-loader/babel'] }
+            options: { plugins: ['react-hot-loader/babel', '@babel/plugin-syntax-dynamic-import'] }
           },
           'ts-loader'
         ].filter(Boolean)
@@ -86,24 +84,6 @@ module.exports = {
       }
     ]
   },
-  optimization: {
-    splitChunks: {
-      name: true,
-      cacheGroups: {
-        commons: {
-          chunks: 'initial',
-          minChunks: 2
-        },
-        vendors: {
-          test: /[\\/]node_modules[\\/]/,
-          chunks: 'all',
-          filename: isProduction ? 'vendor.[contenthash].js' : 'vendor.[hash].js',
-          priority: -10
-        }
-      }
-    },
-    runtimeChunk: true
-  },
   plugins: [
     new webpack.EnvironmentPlugin({
       NODE_ENV: 'development', // use 'development' unless process.env.NODE_ENV is defined
@@ -145,7 +125,6 @@ module.exports = {
     clientLogLevel: 'warning'
   },
   // https://webpack.js.org/configuration/devtool/
-  devtool: isProduction ? 'hidden-source-map' : 'cheap-module-eval-source-map',
   node: {
     // workaround for webpack-dev-server issue
     // https://github.com/webpack/webpack-dev-server/issues/60#issuecomment-103411179

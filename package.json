@@ -23,6 +23,7 @@
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.2.2",
+    "@babel/plugin-syntax-dynamic-import": "^7.7.4",
     "@types/classnames": "^2.2.7",
     "@types/react": "^16.8.2",
     "@types/react-dom": "^16.8.0",

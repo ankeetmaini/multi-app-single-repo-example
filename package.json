@@ -54,8 +54,17 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
+    "humps": "^2.0.1",
+    "normalizr": "^3.4.1",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
-    "react-router-dom": "^5.1.2"
+    "react-redux": "^7.1.3",
+    "react-router-dom": "^5.1.2",
+    "redux": "^4.0.4",
+    "redux-devtools": "^3.5.0",
+    "redux-devtools-dock-monitor": "^1.1.3",
+    "redux-devtools-log-monitor": "^1.4.0",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0"
   }
 }

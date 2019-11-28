@@ -34,6 +34,7 @@ module.exports = {
       // .ts, .tsx
       {
         test: /\.(t|j)sx?$/,
+        exclude: /node_modules/,
         use: [
           !isProduction && {
             loader: 'babel-loader',

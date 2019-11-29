@@ -1,11 +1,17 @@
 var webpack = require('webpack');
 var path = require('path');
 var package = require('./package.json');
+const argv = require('yargs').argv;
+const appConfig = require('./config.json');
+
+const { appName } = argv;
+
+if (!appName) throw new Error('What are you trying to build?? Plisss send --appName');
 
 // variables
 var isProduction = process.argv.indexOf('-p') >= 0 || process.env.NODE_ENV === 'production';
 var sourcePath = path.join(__dirname, './src');
-var outPath = path.join(__dirname, './build');
+var outPath = path.join(__dirname, './build', appName);
 
 // plugins
 var HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -17,6 +23,7 @@ module.exports = {
   entry: './app.js',
   output: {
     path: outPath,
+    publicPath: '/' + appName,
     filename: isProduction ? '[contenthash].js' : '[hash].js',
     chunkFilename: isProduction ? '[name].[contenthash].js' : '[name].[hash].js'
   },
@@ -34,12 +41,17 @@ module.exports = {
         test: /\.(t|j)sx?$/,
         exclude: /node_modules/,
         use: [
-          !isProduction && {
+          {
             loader: 'babel-loader',
             options: { plugins: ['react-hot-loader/babel', '@babel/plugin-syntax-dynamic-import'] }
           },
           'ts-loader'
         ].filter(Boolean)
+      },
+      {
+        test: path.resolve(sourcePath, 'app.js'),
+        loader: path.resolve(sourcePath, '..', 'magic-loader.js'),
+        options: { appName, appConfig }
       },
       // css
       {

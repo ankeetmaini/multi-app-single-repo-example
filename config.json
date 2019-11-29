@@ -1,0 +1,50 @@
+{
+  "awesome-counter": {
+    "importName": "AwesomeCounter",
+    "dirName": "awesome-counter"
+  },
+  "real-1": {
+    "importName": "Real1",
+    "dirName": "real-1"
+  },
+  "real-2": {
+    "importName": "Real2",
+    "dirName": "real-2"
+  },
+  "real-3": {
+    "importName": "Real3",
+    "dirName": "real-3"
+  },
+  "real-4": {
+    "importName": "Real4",
+    "dirName": "real-4"
+  },
+  "real-5": {
+    "importName": "Real5",
+    "dirName": "real-5"
+  },
+  "real-6": {
+    "importName": "Real6",
+    "dirName": "real-6"
+  },
+  "real-7": {
+    "importName": "Real7",
+    "dirName": "real-7"
+  },
+  "real-8": {
+    "importName": "Real8",
+    "dirName": "real-8"
+  },
+  "real-9": {
+    "importName": "Real9",
+    "dirName": "real-9"
+  },
+  "real-10": {
+    "importName": "Real10",
+    "dirName": "real-10"
+  },
+  "real-11": {
+    "importName": "Real11",
+    "dirName": "real-11"
+  }
+}

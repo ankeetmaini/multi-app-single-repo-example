@@ -56,7 +56,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "humps": "^2.0.1",
     "normalizr": "^3.4.1",
     "react": "^16.8.1",
